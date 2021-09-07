@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content flex-grow container mx-auto">
     <router-view> </router-view>
   </main>
 
