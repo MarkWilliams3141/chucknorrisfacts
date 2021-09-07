@@ -1,7 +1,8 @@
 <template>
   <main>
-    <p>Content placeholder</p>
+    <router-view> </router-view>
   </main>
+
 </template>
 
 <script lang="ts">
