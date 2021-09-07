@@ -1,10 +1,31 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <component :is="layout" />
 </template>
+
+<script>
+import DefaultLayout from '@/layouts/DefaultLayout'
+
+export default {
+  components: {
+    DefaultLayout
+  },
+  data () {
+    return {
+      layout: null
+    }
+  },
+  watch: {
+    $route (to) {
+      if (to.meta.layout !== undefined) {
+        this.layout = to.meta.layout
+      } else {
+        this.layout = 'DefaultLayout' // default layout if meta is missing
+      }
+    }
+  }
+}
+
+</script>
 
 <style lang="scss">
 #app {
@@ -15,16 +36,4 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
