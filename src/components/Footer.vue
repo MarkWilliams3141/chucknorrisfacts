@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer fixed bottom-0 w-full">
     <p>
       <strong>Chuck Norris Quotes by <a href="https://github.com/markwilliams3141">Mark Williams - Copyright © {{currentYear}}</a></strong>
     </p>
