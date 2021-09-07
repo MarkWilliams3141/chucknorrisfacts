@@ -1,6 +1,11 @@
 <template>
-  <footer>
-    <p>Footer placeholder</p>
+  <footer class="footer">
+    <p>
+      <strong>Chuck Norris Quotes by <a href="https://github.com/markwilliams3141">Mark Williams - Copyright © {{currentYear}}</a></strong>
+    </p>
+    <p>
+      Thanks to <a href="https://api.chucknorris.io/">chucknorris.io</a>
+    </p>
   </footer>
 </template>
 
@@ -8,6 +13,18 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  data () {
+    return {
+      currentYear: new Date().getFullYear()
+    }
+  },
   name: 'Footer'
 })
 </script>
+
+<style scoped>
+.footer {
+  background-color: #e8e288;
+}
+
+</style>
