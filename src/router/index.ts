@@ -6,18 +6,31 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+    meta: {
+      title: 'Chuck Norris Facts',
+      layout: 'DefaultLayout'
+    }
   },
   {
     path: '/detail/:id',
     name: 'Detail',
-    component: Detail
+    component: Detail,
+    meta: {
+      title: 'Detail',
+      layout: 'DefaultLayout'
+    }
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`
+  next()
 })
 
 export default router
